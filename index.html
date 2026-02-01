@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ===== CUSTOM BACKGROUND ===== */
+    .bg {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255,182,193,0.55), rgba(255,228,225,0.55)),
+        url("sky.jpg"); /* 🔥 CHANGE THIS TO YOUR IMAGE */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(2px);
+      z-index: -2;
+    }
+
+    /* fallback gradient layer */
+    .bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+      opacity: 0.25;
+      z-index: -1;
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.6em;
+      color: #c71585;
+      animation: glow 2.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #ff69b4; }
+      to { text-shadow: 0 0 15px #ff1493; }
+    }
+
+    .message {
+      font-size: 1.2em;
+      margin: 25px 0;
+      background: rgba(255, 255, 255, 0.75);
+      padding: 25px;
+      border-radius: 18px;
+      animation: fadeUp 2s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .audio-box {
+      margin-top: 30px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      opacity: 0.85;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      animation: floatUp 6s linear forwards;
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg"></div>
+
+  <div class="container">
+    <h1>To the prettiest girl in my life ❤️</h1>
+
+    <div class="message">
+      <p>
+        Happy birthday babyyy, today is your special day and i just wanna say that you have been one of the most important person to me since the day we met, and that I’m really so lucky to have met someone so caring and beautiful as you. You, my love served as the spice to my bitter life, without you I’am as good as nothing and if i didn't met you, my life would probably be still in shades of white and gray. Thankyou for always caring and loving for me equally my love, i hope that this 6 months and 10 days that we’ve been together will last forever as we grow together while we face challenges and other things in life. I love you so much and i promise that I’ll love you ti’ll the day the ocean runs dry. Oki bai        </p>
+    </div>
+
+    <div class="gallery">
+      <img src="Mybaby.jpg">
+      <img src="4.jpg">
+      <img src="3.jpg">
+      <img src="2.jpg">
+    </div>
+
+    <div class="audio-box">
+      <h2>A lil somethin 💖</h2>
+      <audio controls>
+        <source src="buko.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <footer>
+      From your one and only 💘
+    </footer>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (16 + Math.random() * 20) + "px";
+      heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+
+</body>
+</html>                                 
